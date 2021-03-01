@@ -14,7 +14,7 @@ router.put('/login/:email', (req, res) =>
     auth.signInWithEmailAndPassword(obj.email.toString(), obj.password.toString())
     .then((user) => {
         console.log("ok")
-        if(obj.email.toString()==="matjas9@gmail.com" || obj.email.toString()==="iherkt98@gmail.com" )
+        if(obj.email.toString()==="" || obj.email.toString()==="" )
         {
             const token = jwt.sign({email:obj.email.toString(), accessLevel:1},
             process.env.JWT_PRIVATE_KEY, {algorithm:'HS256', expiresIn:process.env.JWT_EXPIRY})
